@@ -1,0 +1,489 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;800;900&display=swap");
+:root {
+ --color-primary: #7380ec;
+ --color-danger: #ff7782;
+ --color-success: #41f1b6;
+ --color-warning: #ffbb55;
+ --color-white: #ffffff;
+ --color-info-dark: #7d8da1;
+ --color-info-light: #dceleb;
+ --color-dark: #363949;
+ --color-light: rgba(132, 139, 200, 0.18);
+ --color-primary-variant: #111e88;
+ --color-dark-variant: #677483;
+ --color-background: #f6f6f9;
+ --card-border-radius: 2rem;
+ --border-radius-1: 0.4rem;
+ --border-radius-2: 0.8rem;
+ --border-radius-3: 1.2rem;
+ --card-padding: 1.8rem;
+ --padding-1: 1.2rem;
+ --box-shadow: 0 2rem 3rem var(--color-light);
+ --box-shadow-hover: 17px 15px 32px 7px rgba(163, 163, 163, 1);
+ --box-shadow-button: 17px 15px 32px 7px rgba(163, 163, 163, 1);
+}
+[data-theme="dark"] {
+ --color-background: #181a1e;
+ --color-white: #202528;
+ --color-dark: #edeffd;
+ --color-dark-variant: #a3bdcc;
+ --color-light: rgba(0, 0, 0, 0.4);
+ --box-shadow: 0 2rem 3rem var(--color-light);
+ --box-shadow-hover: 28px 28px 56px #0a0a0c, -28px -28px 56px #262a30;
+}
+* {
+ padding: 0;
+ margin: 0;
+ font-family: "Kanit", sans-serif;
+}
+html {
+ height: 100vh;
+ width: 100vw;
+ /* background-color: aquamarine; */
+ /* background-color: #8ec5fc; */
+ background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+ cursor: default;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ opacity: 1.2;
+ user-select: none;
+}
+/* <---============Role Chooser CSS============---> */
+.role-chooser {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 2.6rem;
+}
+.role-chooser > div {
+ background: var(--color-white);
+ padding: var(--card-padding);
+ border-radius: var(--card-border-radius);
+ -webkit-border-radius: var(--card-border-radius);
+ -moz-border-radius: var(--card-border-radius);
+ -ms-border-radius: var(--card-border-radius);
+ -o-border-radius: var(--card-border-radius);
+ margin-top: 3rem;
+ box-shadow: var(--box-shadow);
+ transition: all 300ms ease;
+ -webkit-transition: all 300ms ease;
+ -moz-transition: all 300ms ease;
+ -ms-transition: all 300ms ease;
+ -o-transition: all 300ms ease;
+}
+div .role-chooser > .doctor-div {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+div .role-chooser > .patient-div img {
+ -webkit-user-drag: none;
+}
+div .role-chooser > .patient-div {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+div .role-chooser > .doctor-div img {
+ -webkit-user-drag: none;
+}
+/* <---============Login CSS============---> */
+.main-div {
+ width: 1340px;
+ height: 750px;
+ margin: 0 auto;
+ margin-top: 4%;
+ display: flex;
+ gap: 10px;
+ flex-direction: row;
+ box-shadow: 0px 0px 20px black;
+ border-radius: 20px;
+ background-color: aliceblue;
+ -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ -ms-border-radius: 20px;
+ -o-border-radius: 20px;
+}
+.svg-div {
+ width: 720px;
+ height: 750px;
+ padding: 0;
+ margin-left: 20px;
+}
+.png-health img {
+ width: 600px;
+ height: 600px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ margin-top: 10%;
+ -webkit-user-drag: none;
+ user-zoom: none;
+}
+.form-part-div {
+ display: flex;
+ flex-direction: column;
+ gap: 15px;
+ justify-content: center;
+ /* align-items: center; */
+ margin: 0 auto;
+ cursor: default;
+ /* background-color: blanchedalmond; */
+}
+.p1 {
+ font-size: 35px;
+ text-align: left;
+ font-weight: 500;
+}
+.p2 {
+ font-size: 20px;
+}
+.uname-div input {
+ display: flex;
+ flex-direction: row;
+ width: 400px;
+ height: 52px;
+ background-color: #edf2f5;
+ border-radius: 0.25rem;
+ border: none;
+ outline: none;
+ padding-left: 25px;
+ -webkit-border-radius: 0.25rem;
+ -moz-border-radius: 0.25rem;
+ -ms-border-radius: 0.25rem;
+ -o-border-radius: 0.25rem;
+ box-shadow: -10px 10px 10px grey;
+ font-size: 16px;
+}
+.pass-div input {
+ display: flex;
+ flex-direction: row;
+ width: 400px;
+ height: 52px;
+ background-color: #edf2f5;
+ border-radius: 0.25rem;
+ border: none;
+ outline: none;
+ padding-left: 25px;
+ -webkit-border-radius: 0.25rem;
+ -moz-border-radius: 0.25rem;
+ -ms-border-radius: 0.25rem;
+ -o-border-radius: 0.25rem;
+ box-shadow: -10px 10px 10px grey;
+ margin-top: 5%;
+ font-size: 16px;
+ position: relative;
+}
+.checkbox-div {
+ display: flex;
+ justify-content: space-between;
+ gap: 10px;
+ margin-top: 5%;
+}
+.check {
+ display: flex;
+ flex-direction: row;
+ gap: 10px;
+}
+.checkbox-div a {
+ text-decoration: none;
+ margin-right: 5px;
+ cursor: pointer;
+ color: black;
+}
+.checkbox-div a:hover {
+ color: #6f2df5;
+}
+.btn-div {
+ display: flex;
+ gap: 25px;
+ margin-top: 5%;
+}
+.btn-div-1 button {
+ width: 200px;
+ height: 52px;
+ font-size: 22px;
+ font-weight: 400;
+ background-color: #6c63ff;
+ color: #ffffff;
+ border: none;
+ cursor: pointer;
+ border-radius: 0.25rem;
+ -webkit-border-radius: 0.25rem;
+ -moz-border-radius: 0.25rem;
+ -ms-border-radius: 0.25rem;
+ -o-border-radius: 0.25rem;
+ box-shadow: 10px 10px 30px grey;
+}
+
+.btn-div-2 button {
+ width: 200px;
+ height: 52px;
+ font-size: 22px;
+ font-weight: 400;
+ background-color: rgba(255, 255, 255, 0.25);
+ color: black;
+ border: none;
+ cursor: pointer;
+ border-radius: 0.25rem;
+ -webkit-border-radius: 0.25rem;
+ -moz-border-radius: 0.25rem;
+ -ms-border-radius: 0.25rem;
+ -o-border-radius: 0.25rem;
+ box-shadow: 10px 10px 30px grey;
+}
+.signup-redirection {
+ margin-top: 5%;
+}
+.signup-redirection a {
+ text-decoration: none;
+ color: black;
+ cursor: pointer;
+}
+.signup-redirection a:hover {
+ color: #6c63ff;
+}
+
+/* <---============Register CSS============---> */
+.main-div-signup {
+ width: 1440px;
+ height: 830px;
+ margin: 0 auto;
+ margin-top: 4%;
+ display: flex;
+ gap: 10px;
+ flex-direction: row;
+ box-shadow: 0px 0px 20px black;
+ background-color: #fcfbfa;
+ border-radius: 20px;
+ -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ -ms-border-radius: 20px;
+ -o-border-radius: 20px;
+}
+.svg-div {
+ width: 680px;
+ height: 830px;
+}
+.svg-div img {
+ -webkit-user-drag: none;
+ user-zoom: none;
+}
+.main-form-signup {
+ width: 760px;
+ height: 830px;
+ /* background: yellow; */
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: flex-start;
+ gap: 10px;
+}
+.p1-signup {
+ font-size: 35px;
+ margin-left: 20px;
+}
+.p2-signup {
+ font-size: 21px;
+ margin-left: 20px;
+ /* margin-top: 10px; */
+}
+.full-name-div {
+ width: 660px;
+ display: flex;
+ flex-direction: row;
+}
+.fname input {
+ width: 250px;
+ background: white;
+ border: none;
+ padding: 15px 20px;
+ border-radius: 20px;
+ margin-top: 15px;
+ margin-left: 20px;
+ box-shadow: grey 0px 20px 20px -5px;
+ border-inline: 2px solid transparent;
+ -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ -ms-border-radius: 20px;
+ -o-border-radius: 20px;
+ outline: 0;
+}
+.lname input {
+ width: 255px;
+ background: white;
+ border: none;
+ padding: 15px 20px;
+ border-radius: 20px;
+ margin-top: 15px;
+ margin-left: 20px;
+ box-shadow: grey 0px 20px 20px -5px;
+ border-inline: 2px solid transparent;
+ -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ -ms-border-radius: 20px;
+ -o-border-radius: 20px;
+ outline: 0;
+}
+.mail-id input {
+ width: 570px;
+ background: white;
+ border: none;
+ padding: 15px 20px;
+ border-radius: 20px;
+ margin-top: 15px;
+ margin-left: 20px;
+ box-shadow: grey 0px 20px 20px -5px;
+ border-inline: 2px solid transparent;
+ -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ -ms-border-radius: 20px;
+ -o-border-radius: 20px;
+ outline: 0;
+}
+.contact-and-role {
+ display: flex;
+ flex-direction: row;
+}
+.contact input {
+ width: 250px;
+ background: white;
+ border: none;
+ padding: 15px 20px;
+ border-radius: 20px;
+ margin-top: 15px;
+ margin-left: 20px;
+ box-shadow: grey 0px 20px 20px -5px;
+ border-inline: 2px solid transparent;
+ -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ -ms-border-radius: 20px;
+ -o-border-radius: 20px;
+ outline: 0;
+}
+.gender select {
+ width: 310px;
+ height: 50px;
+ background: white;
+ border: none;
+ padding: 15px 20px;
+ border-radius: 20px;
+ margin-top: 15px;
+ margin-left: 10px;
+ box-shadow: grey 0px 20px 20px -5px;
+ border-inline: 2px solid transparent;
+ -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ -ms-border-radius: 20px;
+ -o-border-radius: 20px;
+ outline: 0;
+}
+.password-inp input {
+ width: 570px;
+ background: white;
+ border: none;
+ padding: 15px 20px;
+ border-radius: 20px;
+ margin-top: 15px;
+ margin-left: 20px;
+ box-shadow: grey 0px 20px 20px -5px;
+ border-inline: 2px solid transparent;
+ -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ -ms-border-radius: 20px;
+ -o-border-radius: 20px;
+ outline: 0;
+}
+.confirm-pass input {
+ width: 570px;
+ background: white;
+ border: none;
+ padding: 15px 20px;
+ border-radius: 20px;
+ margin-top: 15px;
+ margin-left: 20px;
+ box-shadow: grey 0px 20px 20px -5px;
+ border-inline: 2px solid transparent;
+ -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ -ms-border-radius: 20px;
+ -o-border-radius: 20px;
+ outline: 0;
+}
+.password-inp i {
+ z-index: -1;
+ margin-left: -40px;
+}
+.confirm-pass i {
+ z-index: 1;
+ margin-left: -40px;
+}
+.checkbox-p-div {
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ margin-bottom: 20px;
+ margin-top: 10px;
+}
+.checkbox-div-signup input {
+ margin-left: 20px;
+ width: 30px;
+}
+.checkbox-p-signup p {
+ text-decoration: none;
+}
+.btn-div-signup {
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ margin-left: 80px;
+ margin-top: -5px;
+ gap: 40px;
+}
+.btn-1 button {
+ width: 250px;
+ height: 50px;
+ background-color: #6c63ff;
+ outline: 0;
+ color: white;
+ border: none;
+ border-radius: 20px;
+ -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ -ms-border-radius: 20px;
+ -o-border-radius: 20px;
+ font-family: "Kanit", sans-serif;
+ font-size: 20px;
+ text-align: center;
+ box-shadow: grey 0px 20px 20px -5px;
+}
+.btn-2 button {
+ width: 250px;
+ height: 50px;
+ background-color: white;
+ outline: 0;
+ border: none;
+ border-radius: 20px;
+ -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ -ms-border-radius: 20px;
+ -o-border-radius: 20px;
+ font-family: "Kanit", sans-serif;
+ font-size: 20px;
+ text-align: center;
+ box-shadow: grey 0px 20px 20px -5px;
+}
+.redirect-login-text p {
+ margin-left: 30px;
+ margin-top: 10px;
+}
+.redirect-login {
+ text-decoration: none;
+ color: blue;
+}
+/* <---============Address Fill Doctor CSS============---> */
