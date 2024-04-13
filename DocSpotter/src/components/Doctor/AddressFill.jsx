@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logos from "../../assets/AddressFill.svg";
 import Select from "react-select";
 
@@ -7,79 +7,64 @@ function AddressFill() {
  const [selectedState, setSelectedState] = useState(null);
  const [selectedDistrict, setSelectedDistrict] = useState(null);
  const [selectedCity, setSelectedCity] = useState(null);
+ const [cityOptions, setCityOptions] = useState([]);
+ const [StateList, setStateL5ist] = useState([]);
+ const [dyanmicCountryISOCode, setdyanmicCountryISOCode] = useState("");
 
- const countryOptions = [
-  { value: "USA", label: "United States" },
-  { value: "UK", label: "United Kingdom" },
-  { value: "Canada", label: "Canada" },
-  { value: "Australia", label: "Australia" },
-  { value: "Germany", label: "Germany" },
-  { value: "India", label: "India" }
- ];
+ useEffect(() => {
+  addressApi();
+ }, []);
 
- const stateOptions = {
-  USA: [
-   { value: "California", label: "California" },
-   { value: "New York", label: "New York" }
-  ]
-  // Add options for other countries here
- };
-
- const districtOptions = {
-  California: [
-   { value: "San Francisco", label: "San Francisco" },
-   { value: "Los Angeles", label: "Los Angeles" },
-   { value: "San Diego", label: "San Diego" },
-   { value: "San Jose", label: "San Jose" },
-   { value: "Fresno", label: "Fresno" },
-   { value: "Sacramento", label: "Sacramento" },
-   { value: "Oakland", label: "Oakland" },
-   { value: "Long Beach", label: "Long Beach" },
-   { value: "Bakersfield", label: "Bakersfield" },
-   { value: "Santa Ana", label: "Santa Ana" }
-   // Add more districts for California
-  ],
-  "New York": [
-   { value: "Manhattan", label: "Manhattan" },
-   { value: "Brooklyn", label: "Brooklyn" },
-   { value: "Queens", label: "Queens" },
-   { value: "Bronx", label: "Bronx" },
-   { value: "Staten Island", label: "Staten Island" },
-   { value: "Buffalo", label: "Buffalo" },
-   { value: "Rochester", label: "Rochester" },
-   { value: "Yonkers", label: "Yonkers" },
-   { value: "Syracuse", label: "Syracuse" },
-   { value: "Albany", label: "Albany" }
-   // Add more districts for New York
-  ],
-  Texas: [
-   { value: "Houston", label: "Houston" },
-   { value: "San Antonio", label: "San Antonio" },
-   { value: "Dallas", label: "Dallas" },
-   { value: "Austin", label: "Austin" },
-   { value: "Fort Worth", label: "Fort Worth" }
-   // Add more districts for Texas
-  ],
-  Florida: [
-   { value: "Miami", label: "Miami" },
-   { value: "Orlando", label: "Orlando" },
-   { value: "Tampa", label: "Tampa" },
-   { value: "Jacksonville", label: "Jacksonville" },
-   { value: "Fort Lauderdale", label: "Fort Lauderdale" }
-   // Add more districts for Florida
-  ]
-  // Add more states with district options here
- };
-
- const cityOptions = {
-  // Define city options here
+ const addressApi = async () => {
+  try {
+   const response = await fetch(
+    "https://api.countrystatecity.in/v1/countries",
+    {
+     headers: {
+      "X-CSCAPI-KEY": "Z1AxUTBRNHpObnlMVW15aXZhb3FiN3B6YUJzVWtubzhJUXJpTGJ4Rw==" // Replace "API_KEY" with your actual API key
+     }
+    }
+   );
+   const fetchCountry = await response.json();
+   // Extracting country options from API response
+   const countryOptions = fetchCountry.map((country) => ({
+    value: country.iso2,
+    label: country.name
+   }));
+   setCityOptions(countryOptions);
+  } catch (error) {
+   console.error("Error fetching country options:", error);
+  }
  };
 
  const handleCountryChange = (selectedOption) => {
   setSelectedCountry(selectedOption);
+  setdyanmicCountryISOCode(selectedOption.value);
   setSelectedState(null);
   setSelectedDistrict(null);
   setSelectedCity(null);
+  fetchStates();
+ };
+ const fetchStates = () => {
+  var headers = new Headers();
+  headers.append(
+   "X-CSCAPI-KEY",
+   "Z1AxUTBRNHpObnlMVW15aXZhb3FiN3B6YUJzVWtubzhJUXJpTGJ4Rw=="
+  );
+
+  var requestOptions = {
+   method: "GET",
+   headers: headers,
+   redirect: "follow"
+  };
+
+  fetch(
+   `https://api.countrystatecity.in/v1/countries/${dyanmicCountryISOCode}/states`,
+   requestOptions
+  )
+   .then((response) => response.text())
+   .then((result) => console.log(result))
+   .catch((error) => console.log("error", error));
  };
 
  const handleStateChange = (selectedOption) => {
@@ -96,7 +81,6 @@ function AddressFill() {
  const handleCityChange = (selectedOption) => {
   setSelectedCity(selectedOption);
  };
-
  return (
   <>
    <div className="main-div">
@@ -118,7 +102,7 @@ function AddressFill() {
        isSearchable
        className="select-country"
        classNamePrefix="select"
-       options={countryOptions}
+       options={cityOptions}
        value={selectedCountry}
        onChange={handleCountryChange}
        placeholder="Select Your Country"
@@ -129,7 +113,10 @@ function AddressFill() {
         isSearchable
         className="select-state"
         classNamePrefix="select"
-        options={stateOptions[selectedCountry.value]}
+        options={StateList.map((state) => ({
+         value: state.iso2,
+         label: state.name
+        }))}
         value={selectedState}
         onChange={handleStateChange}
         placeholder="Select Your State"
@@ -143,7 +130,10 @@ function AddressFill() {
         isSearchable
         className="select-district"
         classNamePrefix="select"
-        options={districtOptions[selectedState.value]}
+        options={selectedState.districts.map((district) => ({
+         value: district.name,
+         label: district.name
+        }))}
         value={selectedDistrict}
         onChange={handleDistrictChange}
         placeholder="Select Your District"
@@ -155,7 +145,10 @@ function AddressFill() {
         isSearchable
         className="select-city"
         classNamePrefix="select"
-        options={cityOptions[selectedDistrict.value]}
+        options={selectedDistrict.cities.map((city) => ({
+         value: city.name,
+         label: city.name
+        }))}
         value={selectedCity}
         onChange={handleCityChange}
         placeholder="Select Your City"
@@ -164,10 +157,12 @@ function AddressFill() {
      </div>
      <div
       className="btn-div"
-      style={{alignItems: "center", justifyContent: "center" }}
+      style={{ alignItems: "center", justifyContent: "center" }}
      >
-      <div className="btn-div-1" style={{marginRight:"50px"}}>
-       <button type="submit" style={{width:"300px"}}>Proceed</button>
+      <div className="btn-div-1" style={{ marginRight: "50px" }}>
+       <button type="submit" style={{ width: "300px" }}>
+        Proceed
+       </button>
       </div>
      </div>
     </div>
