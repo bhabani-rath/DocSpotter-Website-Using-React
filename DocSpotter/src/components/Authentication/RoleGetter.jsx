@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import "../../CSS/App.css";
 import rolegetter from "../../assets/rolegetter-removebg.png";
 import docimg from "../../assets/Doctor-Char.png";
 import patientimg from "../../assets/patient.png";

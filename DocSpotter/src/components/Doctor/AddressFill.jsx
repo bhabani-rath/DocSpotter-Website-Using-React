@@ -116,6 +116,8 @@ function AddressFill() {
       <Select
        isClearable
        isSearchable
+       className="select-country"
+       classNamePrefix="select"
        options={countryOptions}
        value={selectedCountry}
        onChange={handleCountryChange}
@@ -125,6 +127,8 @@ function AddressFill() {
        <Select
         isClearable
         isSearchable
+        className="select-state"
+        classNamePrefix="select"
         options={stateOptions[selectedCountry.value]}
         value={selectedState}
         onChange={handleStateChange}
@@ -137,6 +141,8 @@ function AddressFill() {
        <Select
         isClearable
         isSearchable
+        className="select-district"
+        classNamePrefix="select"
         options={districtOptions[selectedState.value]}
         value={selectedDistrict}
         onChange={handleDistrictChange}
@@ -147,12 +153,22 @@ function AddressFill() {
        <Select
         isClearable
         isSearchable
+        className="select-city"
+        classNamePrefix="select"
         options={cityOptions[selectedDistrict.value]}
         value={selectedCity}
         onChange={handleCityChange}
         placeholder="Select Your City"
        />
       )}
+     </div>
+     <div
+      className="btn-div"
+      style={{alignItems: "center", justifyContent: "center" }}
+     >
+      <div className="btn-div-1" style={{marginRight:"50px"}}>
+       <button type="submit" style={{width:"300px"}}>Proceed</button>
+      </div>
      </div>
     </div>
    </div>

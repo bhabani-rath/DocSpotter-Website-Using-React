@@ -1,7 +1,7 @@
 import React from "react";
-import "../../CSS/login.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "../../CSS/App.css";
 import "../../JS/Fontawsome";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";

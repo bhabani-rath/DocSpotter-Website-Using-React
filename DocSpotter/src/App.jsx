@@ -4,6 +4,7 @@ import Login from "./components/Authentication/Login";
 import SignUp from "./components/Authentication/Register";
 import AddressFill from "./components/Doctor/AddressFill";
 import LandingPage from "./components/Landing Page/LandingPage";
+import Aboutus from "./components/Landing Page/Pages/Aboutus";
 
 function App() {
  return (
@@ -11,6 +12,7 @@ function App() {
    <Routes>
     {/* <---============Landing Page============---> */}
     <Route path="/" element={<LandingPage />} />
+    <Route path="/aboutus" element={<Aboutus />} />
     {/* <---============Authentication============---> */}
     <Route path="/authentication/rolegetter" element={<RoleGetter />} />
     <Route path="/authentication/login" element={<Login />} />
