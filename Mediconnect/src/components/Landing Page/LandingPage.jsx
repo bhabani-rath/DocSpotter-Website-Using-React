@@ -25,19 +25,19 @@ function LandingPage() {
      <nav className="nav-navbar">
       <ul className="navbar-ul">
        <li className="li-home">
-        <Link>Home</Link>
+        <Link to="/">Home</Link>
        </li>
        <li className="li-aboutus">
         <Link to="/aboutus">About Us</Link>
        </li>
        <li className="li-services">
-        <Link>Services</Link>
+        <Link to="/services">Services</Link>
        </li>
        <li className="li-doctors">
-        <Link>Doctors</Link>
+        <Link to="/doctors">Doctors</Link>
        </li>
        <li className="li-contacts">
-        <Link>Contact Us</Link>
+        <Link to="/Contactus">Contact Us</Link>
        </li>
        <div className="btn-1-login">
         <button type="submit">

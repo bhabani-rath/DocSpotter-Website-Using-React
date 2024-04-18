@@ -14,13 +14,13 @@ const Aboutus = () => {
      <nav className="nav-navbar">
       <ul className="navbar-ul">
        <li className="li-home">
-        <Link>Home</Link>
+        <Link to="/">Home</Link>
        </li>
        <li className="li-aboutus">
         <Link to="/aboutus">About Us</Link>
        </li>
        <li className="li-services">
-        <Link>Services</Link>
+        <Link to="/services">Services</Link>
        </li>
        <li className="li-doctors">
         <Link>Doctors</Link>
@@ -32,12 +32,12 @@ const Aboutus = () => {
         <button type="submit">
          {" "}
          <span>
-          <i class="fa-solid fa-right-to-bracket"></i>
+          <i className="fa-solid fa-right-to-bracket"></i>
          </span>{" "}
          LogIn
         </button>
         <button type="submit">
-         <i class="fa-solid fa-user-plus"></i>Sign Up
+         <i className="fa-solid fa-user-plus"></i>Sign Up
         </button>
        </div>
       </ul>

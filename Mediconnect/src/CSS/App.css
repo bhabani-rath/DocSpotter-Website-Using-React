@@ -502,6 +502,8 @@ div .role-chooser > .doctor-div img {
  flex-direction: row;
  flex-wrap: wrap;
  gap: 15px;
+ justify-content: center;
+ align-items: center;
  border: none;
  outline: none;
 }
@@ -1222,4 +1224,292 @@ div .role-chooser > .doctor-div img {
  color: #004861;
  font-size: 25px;
  font-weight: 300;
+}
+/* <---============Services.jsx CSS============---> */
+.service-first-div {
+ display: flex;
+ flex-direction: column;
+ flex-wrap: wrap;
+ flex-grow: 1;
+ justify-content: center;
+ align-items: center;
+ margin-top: 5%;
+}
+.service-first-div h3 {
+ color: black;
+ font-weight: 300;
+ font-size: 24px;
+}
+.service-first-div h1 {
+ color: #004861;
+ font-size: 48px;
+ font-weight: 400;
+}
+.service-first-div h2 {
+ color: black;
+ font-size: 30px;
+ font-weight: 300;
+}
+.services-card-frame {
+ display: grid;
+ grid-template-columns: auto auto auto 24rem;
+ margin: 0 auto;
+ gap: 2rem;
+ margin-top: 0.7rem;
+ width: 90%;
+ /* border: 1px solid black; */
+}
+.services-card-frame .card-services-c1,
+.card-services-c2,
+.card-services-c3,
+.card-services-c4,
+.card-services-c5,
+.card-services-c6,
+.card-services-c7,
+.card-services-c8,
+.card-services-c9,
+.card-services-c10,
+.card-services-c11,
+.card-services-c12 {
+ width: 338px;
+ height: 350px;
+ border-radius: 20px;
+ margin-top: 12%;
+ box-shadow: var(--box-shadow-hover);
+ background-color: white;
+ display: flex;
+ flex-direction: column;
+ flex-wrap: wrap;
+ text-align: center;
+ gap: 20px;
+ padding: 25px;
+ justify-content: center;
+ align-items: center;
+}
+.services-card-frame .card-services-c1 img,
+.card-services-c2 img,
+.card-services-c3 img,
+.card-services-c4 img,
+.card-services-c5 img,
+.card-services-c6 img,
+.card-services-c7 img,
+.card-services-c8 img,
+.card-services-c9 img,
+.card-services-c10 img,
+.card-services-c11 img,
+.card-services-c12 img {
+ width: 60px;
+ border-radius: 10px;
+ -webkit-border-radius: 10px;
+ -moz-border-radius: 10px;
+ -ms-border-radius: 10px;
+ -o-border-radius: 10px;
+}
+.services-card-frame .card-services-c1 h2,
+.card-services-c2 h2,
+.card-services-c3 h2,
+.card-services-c4 h2,
+.card-services-c5 h2,
+.card-services-c6 h2,
+.card-services-c7 h2,
+.card-services-c8 h2,
+.card-services-c9 h2,
+.card-services-c10 h2,
+.card-services-c11 h2,
+.card-services-c12 h2 {
+ font-weight: 500;
+ color: #545f83;
+}
+.services-card-frame .card-services-c1 button,
+.card-services-c2 button,
+.card-services-c3 button,
+.card-services-c4 button,
+.card-services-c5 button,
+.card-services-c6 button,
+.card-services-c7 button,
+.card-services-c8 button,
+.card-services-c9 button,
+.card-services-c10 button,
+.card-services-c11 button,
+.card-services-c12 button {
+ width: 150px;
+ height: 50px;
+ color: white;
+ background-color: #545f83;
+ font-size: 20px;
+ border: none;
+ border-radius: 10px;
+ -webkit-border-radius: 10px;
+ -moz-border-radius: 10px;
+ -ms-border-radius: 10px;
+ -o-border-radius: 10px;
+}
+/* <---============Doctors.jsx CSS============---> */
+.docs-text-area-frame {
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+ width: 700px;
+ margin: 0 auto;
+ margin-top: 5%;
+ text-align: center;
+}
+.docs-text-area-frame h1 {
+ color: #004861;
+ font-size: 35px;
+ font-weight: 500;
+}
+.docs-text-area-frame p {
+ font-size: 22px;
+}
+.docs-card-frame {
+ display: grid;
+ grid-template-columns: auto auto auto 24rem;
+ margin: 0 auto;
+ gap: 2rem;
+ margin-top: 0.7rem;
+ width: 95%;
+ /* border: 1px solid black; */
+}
+.docs-card-frame .docs-card-c {
+ width: 338px;
+ height: 480px;
+ border-radius: 20px;
+ margin-top: 12%;
+ box-shadow: var(--box-shadow-hover);
+ background-color: white;
+ display: flex;
+ flex-direction: column;
+ flex-wrap: wrap;
+ text-align: center;
+ gap: 20px;
+ padding: 25px;
+ justify-content: center;
+ align-items: center;
+}
+.docs-card-frame .docs-card-c img {
+ width: 15vw;
+ border: 2.5px #9dc0fa solid;
+ border-radius: 25px;
+ -webkit-border-radius: 25px;
+ -moz-border-radius: 25px;
+ -ms-border-radius: 25px;
+ -o-border-radius: 25px;
+ transition: all 0.3s ease-in-out;
+ -webkit-transition: all 0.3s ease;
+ -moz-transition: all 0.3s ease;
+ -ms-transition: all 0.3s ease;
+ -o-transition: all 0.3s ease;
+}
+
+.docs-card-frame .docs-card-c img:hover {
+ transform: scale(1.05);
+ box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+@keyframes pulse {
+ 0% {
+  transform: scale(1);
+ }
+ 50% {
+  transform: scale(1.05);
+ }
+ 100% {
+  transform: scale(1);
+ }
+}
+
+.docs-card-frame .docs-card-c img:focus {
+ animation: pulse 1s infinite alternate;
+}
+.docs-card-frame .docs-card-c button {
+ width: 150px;
+ height: 50px;
+ border: none;
+ color: white;
+ font-size: 20px;
+ background-color: #545f83;
+ border-radius: 14px;
+ -webkit-border-radius: 14px;
+ -moz-border-radius: 14px;
+ -ms-border-radius: 14px;
+ -o-border-radius: 14px;
+ transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.docs-card-frame .docs-card-c button:hover {
+ background-color: #545f83;
+ transform: scale(1.1);
+}
+.docs-card-frame .docs-card-c h2 {
+ color: #004861;
+ font-weight: 400;
+ margin-bottom: -20px;
+}
+/* <---============ContactUs.jsx CSS============---> */
+.main-txt h1 {
+ font-size: 48px;
+ text-align: center;
+ font-weight: 500;
+ color: #004861;
+ margin-top: 2%;
+}
+
+/* <---============Aside.jsx CSS============---> */
+.sidebar-container {
+ display: flex;
+}
+.sidebar-container nav {
+ position: relative;
+ top: 0;
+ bottom: 0;
+ height: 100vh;
+ left: 0;
+ background: #fff;
+ width: 280px;
+ overflow: hidden;
+ box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.logo {
+ text-align: center;
+ display: flex;
+ margin: 10px 0 0 10px;
+}
+.logo img {
+ width: 45px;
+ height: 45px;
+ border-radius: 50%;
+}
+.logo span {
+ font-weight: bold;
+ padding-left: 15px;
+ font-size: 18px;
+ text-transform: uppercase;
+}
+.sidebar-container a {
+ position: relative;
+ color: rgb(85, 83, 83);
+ font-size: 14px;
+ display: table;
+ width: 280px;
+ padding: 10px;
+}
+nav .fas {
+ position: relative;
+ width: 70px;
+ height: 40px;
+ top: 14px;
+ font-size: 20px;
+ text-align: center;
+}
+.nav-item {
+ position: relative;
+ top: 12px;
+ margin-left: 10px;
+}
+a:hover {
+ background: #eee;
+}
+.logout {
+ position: absolute;
+ bottom: 0;
 }
