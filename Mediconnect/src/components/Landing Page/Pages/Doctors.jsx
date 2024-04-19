@@ -13,10 +13,18 @@ import doc8 from "../../../assets/Doctor/Sham M Juratli.jpg";
 function Doctors() {
  const navigate = useNavigate();
  function handleLoginButton() {
-  navigate("/authentication/login");
+  if (isLoggedIn()) {
+   navigate("/authenticated/user/dashboard");
+  } else {
+   navigate("/authentication/login");
+  }
  }
  function handleSignUpButton() {
-  navigate("/authentication/signup");
+  if (isLoggedIn()) {
+   navigate("/authenticated/user/dashboard");
+  } else {
+   navigate("/authentication/signup");
+  }
  }
 
  return (

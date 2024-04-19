@@ -1,65 +1,60 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import logomediconnect from "../../../assets/UserPanel/Profile-Picture-Small.jpg";
 
 function Aside() {
  return (
   <>
    <div className="sidebar-container">
     {" "}
-    <nav>
+    <nav className="sidepanel">
      <ul>
       <li>
-       <a href="#" class="logo">
-        <img src="/logo.jpg" alt="" />
-        <span class="nav-item">DashBoard</span>
-       </a>
+       <Link href="#" className="logo">
+        <img src={logomediconnect} alt="" />
+       </Link>
       </li>
       <li>
-       <a href="#">
-        <i class="fas fa-home"></i>
-        <span class="nav-item">Home</span>
-       </a>
+       <Link href="#">
+        <i className="fas fa-home"></i>
+        <span className="nav-item">Home</span>
+       </Link>
       </li>
       <li>
-       <a href="">
-        <i class="fas fa-user"></i>
-        <span class="nav-item">Profile</span>
-       </a>
+       <Link to="">
+        <i class="fa-regular fa-hospital"></i>
+        <span className="nav-item">Hospitals</span>
+       </Link>
       </li>
       <li>
-       <a href="">
-        <i class="fas fa-wallet"></i>
-        <span class="nav-item">Wallet</span>
-       </a>
+       <Link to="">
+        <i class="fa-solid fa-user-doctor"></i>{" "}
+        <span className="nav-item">Doctors</span>
+       </Link>
       </li>
       <li>
-       <a href="">
-        <i class="fas fa-chart-bar"></i>
-        <span class="nav-item">Analytics</span>
-       </a>
+       <Link to="">
+        <i class="fa-solid fa-suitcase-medical"></i>
+        <span className="nav-item">Treatment History</span>
+       </Link>
       </li>
       <li>
-       <a href="">
-        <i class="fas fa-tasks"></i>
-        <span class="nav-item">Tasks</span>
-       </a>
+       <Link to="">
+        <i class="fa-solid fa-money-bills"></i>
+        <span className="nav-item">Transaction History</span>
+       </Link>
       </li>
       <li>
-       <a href="">
-        <i class="fas fa-cog"></i>
-        <span class="nav-item">Settings</span>
-       </a>
+       <Link to="">
+        <i className="fas fa-question-circle"></i>
+        <span className="nav-item">Help</span>
+       </Link>
       </li>
       <li>
-       <a href="">
-        <i class="fas fa-question-circle"></i>
-        <span class="nav-item">Help</span>
-       </a>
-      </li>
-      <li>
-       <a href="" class="logout">
-        <i class="fas fa-sign-out-alt"></i>
-        <span class="nav-item">Log out</span>
-       </a>
+       <Link to="" className="logout">
+        <i className="fas fa-sign-out-alt"></i>
+        <span className="nav-item">Log out</span>
+       </Link>
       </li>
      </ul>
     </nav>

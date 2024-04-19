@@ -2,7 +2,7 @@ import React from "react";
 import "../../CSS/App.css";
 import logoicon from "../../assets/MedicalLogo Icon.svg";
 import tablets from "../../assets/Tablets.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import doctornone from "../../assets/Card Pics Landing Page/doctor-none.png";
 import heartinhand from "../../assets/Card Pics Landing Page/heart-in-hand.png";
 import mediprescription from "../../assets/Card Pics Landing Page/medical-prescription.png";
@@ -16,6 +16,22 @@ import doc4 from "../../assets/Doctor/Dr Megan Coleman.jpg";
 import hosplogoly from "../../assets/alert2.png";
 
 function LandingPage() {
+ const navigate = useNavigate();
+ function handleLoginButton() {
+  if (isLoggedIn()) {
+   navigate("/authenticated/user/dashboard");
+  } else {
+   navigate("/authentication/login");
+  }
+ }
+ function handleSignUpButton() {
+  if (isLoggedIn()) {
+   navigate("/authenticated/user/dashboard");
+  } else {
+   navigate("/authentication/signup");
+  }
+ }
+
  return (
   <>
    <div className="main-landing-div">
@@ -40,14 +56,14 @@ function LandingPage() {
         <Link to="/Contactus">Contact Us</Link>
        </li>
        <div className="btn-1-login">
-        <button type="submit">
+        <button type="submit" onClick={handleLoginButton}>
          {" "}
          <span>
           <i class="fa-solid fa-right-to-bracket"></i>
          </span>{" "}
          LogIn
         </button>
-        <button type="submit">
+        <button type="submit" onClick={handleSignUpButton}>
          <i class="fa-solid fa-user-plus"></i>Sign Up
         </button>
        </div>

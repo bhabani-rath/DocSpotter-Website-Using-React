@@ -8,6 +8,8 @@ import Aboutus from "./components/Landing Page/Pages/Aboutus";
 import Services from "./components/Landing Page/Pages/Services";
 import Doctors from "./components/Landing Page/Pages/Doctors";
 import Contactus from "./components/Landing Page/Pages/Contactus";
+import Aside from "./components/Patient/Components/Aside";
+import UserPanel from "./components/Patient/Panels/UserPanel";
 
 function App() {
  return (
@@ -25,8 +27,9 @@ function App() {
     <Route path="/authentication/signup" element={<SignUp />} />
     {/* <---============Doctor============---> */}
     <Route path="/doctor/addressfill" element={<AddressFill />} />
-             {/* <---============User============---> */}
-             <Route path="/"/>
+    {/* <---============User============---> */}
+    <Route path="/user/aside" element={<Aside />} />
+    <Route path="/user/userpanel" element={<UserPanel />} />
    </Routes>
   </Router>
  );

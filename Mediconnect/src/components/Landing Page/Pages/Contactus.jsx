@@ -5,10 +5,18 @@ import logoicon from "../../../assets/MedicalLogo Icon.svg";
 function Contactus() {
  const navigate = useNavigate();
  function handleLoginButton() {
-  navigate("/authentication/login");
+  if (isLoggedIn()) {
+   navigate("/authenticated/user/dashboard");
+  } else {
+   navigate("/authentication/login");
+  }
  }
  function handleSignUpButton() {
-  navigate("/authentication/signup");
+  if (isLoggedIn()) {
+   navigate("/authenticated/user/dashboard");
+  } else {
+   navigate("/authentication/signup");
+  }
  }
  return (
   <>
@@ -37,12 +45,12 @@ function Contactus() {
         <button type="submit" onClick={handleLoginButton}>
          {" "}
          <span>
-          <i className="fa-solid fa-right-to-bracket"></i>
+          <i class="fa-solid fa-right-to-bracket"></i>
          </span>{" "}
          LogIn
         </button>
         <button type="submit" onClick={handleSignUpButton}>
-         <i className="fa-solid fa-user-plus"></i>Sign Up
+         <i class="fa-solid fa-user-plus"></i>Sign Up
         </button>
        </div>
       </ul>

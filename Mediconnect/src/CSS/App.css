@@ -521,6 +521,7 @@ div .role-chooser > .doctor-div img {
  position: -webkit-sticky;
  position: sticky;
  align-items: center;
+ flex-grow: 1;
  top: 0;
  z-index: 1;
  background: #13917b;
@@ -645,7 +646,7 @@ div .role-chooser > .doctor-div img {
  background-position: center;
  background-size: cover;
  background-repeat: no-repeat;
- background-image: url(../assets/Healthcare-login-bg.jpg);
+ background-image: url(../assets/UserPanel/LandingBG.jpg);
 }
 .text-area-lp {
  display: flex;
@@ -1469,21 +1470,27 @@ div .role-chooser > .doctor-div img {
  overflow: hidden;
  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
+.sidebar-container nav ul li a {
+ text-decoration: none;
+}
 .logo {
- text-align: center;
+ /* text-align: center; */
  display: flex;
- margin: 10px 0 0 10px;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ padding: 20px;
+ margin: 0 auto;
 }
 .logo img {
- width: 45px;
- height: 45px;
+ width: 108px;
+ height: 108px;
+ margin-left: 19%;
  border-radius: 50%;
-}
-.logo span {
- font-weight: bold;
- padding-left: 15px;
- font-size: 18px;
- text-transform: uppercase;
+ -webkit-border-radius: 50%;
+ -moz-border-radius: 50%;
+ -ms-border-radius: 50%;
+ -o-border-radius: 50%;
 }
 .sidebar-container a {
  position: relative;
@@ -1493,7 +1500,7 @@ div .role-chooser > .doctor-div img {
  width: 280px;
  padding: 10px;
 }
-nav .fas {
+.sidepanel i {
  position: relative;
  width: 70px;
  height: 40px;
@@ -1510,6 +1517,20 @@ a:hover {
  background: #eee;
 }
 .logout {
- position: absolute;
- bottom: 0;
+ margin-top: 95%;
+ text-decoration: none;
+}
+/* <---============User Panel Initial CSS============---> */
+.containers {
+ display: grid;
+ width: 96%;
+ margin: 0 auto;
+ gap: 1.8rem;
+ margin-top: 0.7rem;
+ margin-left: -0.75%;
+ grid-template-columns: 20rem auto;
+}
+.user-panel-dash-area {
+ width: 100vw;
+ height: 100vh;
 }

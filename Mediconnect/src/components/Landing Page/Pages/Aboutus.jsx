@@ -1,10 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logoicon from "../../../assets/MedicalLogo Icon.svg";
 import doc_about_1 from "../../../assets/AboutUs/AboutUs Doc IMG 1.jpg";
 import doc_about_2 from "../../../assets/AboutUs/AboutUs Doc IMG 2.jpg";
 
 const Aboutus = () => {
+ const navigate = useNavigate();
+ function handleLoginButton() {
+  navigate("/authenticated/user/dashboard");
+ }
+ function handleSignUpButton() {
+  navigate("/authenticated/user/dashboard");
+ }
  return (
   <>
    <div className="main-landing-div">
@@ -23,21 +30,21 @@ const Aboutus = () => {
         <Link to="/services">Services</Link>
        </li>
        <li className="li-doctors">
-        <Link>Doctors</Link>
+        <Link to="/doctors">Doctors</Link>
        </li>
        <li className="li-contacts">
-        <Link>Contact Us</Link>
+        <Link to="/Contactus">Contact Us</Link>
        </li>
        <div className="btn-1-login">
-        <button type="submit">
+        <button type="submit" onClick={handleLoginButton}>
          {" "}
          <span>
-          <i className="fa-solid fa-right-to-bracket"></i>
+          <i class="fa-solid fa-right-to-bracket"></i>
          </span>{" "}
          LogIn
         </button>
-        <button type="submit">
-         <i className="fa-solid fa-user-plus"></i>Sign Up
+        <button type="submit" onClick={handleSignUpButton}>
+         <i class="fa-solid fa-user-plus"></i>Sign Up
         </button>
        </div>
       </ul>

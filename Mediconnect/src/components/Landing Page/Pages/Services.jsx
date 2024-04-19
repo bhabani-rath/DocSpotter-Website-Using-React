@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logoicon from "../../../assets/MedicalLogo Icon.svg";
 import heartinhand from "../../../assets/Card Pics Landing Page/heart-in-hand.png";
 import mediprescription from "../../../assets/Card Pics Landing Page/medical-prescription.png";
@@ -9,6 +9,21 @@ import syringe from "../../../assets/Card Pics Landing Page/syringe.png";
 import doctornone from "../../../assets/Card Pics Landing Page/doctor-none.png";
 
 function Services() {
+ const navigate = useNavigate();
+ function handleLoginButton() {
+  if (isLoggedIn()) {
+   navigate("/authenticated/user/dashboard");
+  } else {
+   navigate("/authentication/login");
+  }
+ }
+ function handleSignUpButton() {
+  if (isLoggedIn()) {
+   navigate("/authenticated/user/dashboard");
+  } else {
+   navigate("/authentication/signup");
+  }
+ }
  return (
   <>
    <div className="main-landing-div">
@@ -33,14 +48,14 @@ function Services() {
         <Link to="/Contactus">Contact Us</Link>
        </li>
        <div className="btn-1-login">
-        <button type="submit">
+        <button type="submit" onClick={handleLoginButton}>
          {" "}
          <span>
           <i class="fa-solid fa-right-to-bracket"></i>
          </span>{" "}
          LogIn
         </button>
-        <button type="submit">
+        <button type="submit" onClick={handleSignUpButton}>
          <i class="fa-solid fa-user-plus"></i>Sign Up
         </button>
        </div>

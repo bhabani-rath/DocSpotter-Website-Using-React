@@ -1,9 +1,13 @@
 import React from "react";
+import Aside from "./../Components/Aside";
 
-function UserPanel(children) {
+function UserPanel({ children }) {
  return (
   <>
-   <div></div>
+   <div className="containers">
+    <Aside />
+    <div className="user-panel-dash-area">{children}</div>
+   </div>
   </>
  );
 }
