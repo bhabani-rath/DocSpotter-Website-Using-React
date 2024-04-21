@@ -18,18 +18,10 @@ import hosplogoly from "../../assets/alert2.png";
 function LandingPage() {
  const navigate = useNavigate();
  function handleLoginButton() {
-  if (isLoggedIn()) {
-   navigate("/authenticated/user/dashboard");
-  } else {
-   navigate("/authentication/login");
-  }
+  navigate("/authentication/login");
  }
  function handleSignUpButton() {
-  if (isLoggedIn()) {
-   navigate("/authenticated/user/dashboard");
-  } else {
-   navigate("/authentication/signup");
-  }
+  navigate("/authentication/signup");
  }
 
  return (
@@ -37,7 +29,9 @@ function LandingPage() {
    <div className="main-landing-div">
     <div className="navbar">
      <img src={logoicon} alt="" />
-     <h1>DocSpotter</h1>
+     <h1 className="heading-logo">
+      Health<span>Nest</span>
+     </h1>
      <nav className="nav-navbar">
       <ul className="navbar-ul">
        <li className="li-home">

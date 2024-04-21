@@ -10,6 +10,13 @@ import Doctors from "./components/Landing Page/Pages/Doctors";
 import Contactus from "./components/Landing Page/Pages/Contactus";
 import Aside from "./components/Patient/Components/Aside";
 import UserPanel from "./components/Patient/Panels/UserPanel";
+import Home from "./components/Patient/Pages/Home";
+import Hospitals from "./components/Patient/Pages/Hospitals";
+import TreatmentHistory from "./components/Patient/Pages/TreatmentHistory";
+import Help from "./components/Patient/Pages/Help";
+import Bookings from "./components/Patient/Pages/Bookings";
+import DoctorsUPanel from "./components/Patient/Pages/DoctorsUPanel";
+import TransactionHistory from "./components/Patient/Pages/TransactionHistory";
 
 function App() {
  return (
@@ -30,6 +37,19 @@ function App() {
     {/* <---============User============---> */}
     <Route path="/user/aside" element={<Aside />} />
     <Route path="/user/userpanel" element={<UserPanel />} />
+    <Route path="/user/userpanel/home" element={<Home />} />
+    <Route path="/user/userpanel/hospitals" element={<Hospitals />} />
+    <Route path="/user/userpanel/doctors" element={<DoctorsUPanel />} />
+    <Route path="/user/userpanel/bookings" element={<Bookings />} />
+    <Route
+     path="/user/userpanel/treatmenthistory"
+     element={<TreatmentHistory />}
+    />
+    <Route
+     path="/user/userpanel/transactionhistory"
+     element={<TransactionHistory />}
+    />
+    <Route path="/user/userpanel/help" element={<Help />} />
    </Routes>
   </Router>
  );
