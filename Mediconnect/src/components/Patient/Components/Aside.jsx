@@ -22,31 +22,31 @@ function Aside() {
       </li>
       <li>
        <Link to="/user/userpanel/hospitals">
-        <i class="fa-regular fa-hospital"></i>
+        <i className="fa-regular fa-hospital"></i>
         <span className="nav-item">Hospitals</span>
        </Link>
       </li>
       <li>
        <Link to="/user/userpanel/doctors">
-        <i class="fa-solid fa-user-doctor"></i>{" "}
+        <i className="fa-solid fa-user-doctor"></i>{" "}
         <span className="nav-item">Doctors</span>
        </Link>
       </li>
       <li>
        <Link to="/user/userpanel/bookings">
-        <i class="fa-solid fa-check-to-slot"></i>{" "}
+        <i className="fa-solid fa-check-to-slot"></i>{" "}
         <span className="nav-item">Bookings</span>
        </Link>
       </li>
       <li>
        <Link to="/user/userpanel/treatmenthistory">
-        <i class="fa-solid fa-suitcase-medical"></i>
+        <i className="fa-solid fa-suitcase-medical"></i>
         <span className="nav-item">Treatment History</span>
        </Link>
       </li>
       <li>
        <Link to="/user/userpanel/transactionhistory">
-        <i class="fa-solid fa-money-bills"></i>
+        <i className="fa-solid fa-money-bills"></i>
         <span className="nav-item">Transaction History</span>
        </Link>
       </li>
