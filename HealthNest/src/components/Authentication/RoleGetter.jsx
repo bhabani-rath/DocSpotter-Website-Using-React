@@ -23,6 +23,9 @@ function RoleGetter() {
   } else if (role === "patient") {
    setDoctorClicked(false);
    setPatientClicked(true);
+   setTimeout(() => {
+    navigate("/user/userpanel/home");
+   }, 1000);
   }
  };
 

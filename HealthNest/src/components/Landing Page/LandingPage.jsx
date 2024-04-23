@@ -23,6 +23,15 @@ function LandingPage() {
  function handleSignUpButton() {
   navigate("/authentication/signup");
  }
+ function handleMoreInfo() {
+  navigate("/services");
+ }
+ function handleMoreInfo1() {
+  navigate("/doctors");
+ }
+ function handleMakeAnAppointment() {
+  navigate("/user/userpanel/bookings");
+ }
 
  return (
   <>
@@ -107,7 +116,7 @@ function LandingPage() {
          far between, but they do occur. Causes of implant failure include gum
          disease.
         </p>
-        <button>More Info</button>
+        <button onClick={handleMoreInfo}>More Info</button>
        </div>
        <div className="card-c2">
         <img src={heartinhand} alt="img-heartinhand" />
@@ -116,7 +125,7 @@ function LandingPage() {
          A place where blood is collected from donors, typed, separated into
          components, stored, and prepared for transfusion to recipients.
         </p>
-        <button>More Info</button>
+        <button onClick={handleMoreInfo}>More Info</button>
        </div>
        <div className="card-c3">
         <img src={mediprescription} alt="img-prescrip" />
@@ -126,7 +135,7 @@ function LandingPage() {
          from its socket in the bone. There are a number of reasons why tooth
          clean
         </p>
-        <button>More Info</button>
+        <button onClick={handleMoreInfo}>More Info</button>
        </div>
        <div className="card-c4">
         <img src={doctornone} alt="img-doctor-none" />
@@ -135,7 +144,7 @@ function LandingPage() {
          You should visit the dentist every six months for teeth cleanings.
          Tartar is a hard buildup of plaque that forms on the teeth.
         </p>
-        <button>More Info</button>
+        <button onClick={handleMoreInfo}>More Info</button>
        </div>
        <div className="card-c5">
         <img src={heart} alt="img-heart" />
@@ -144,7 +153,7 @@ function LandingPage() {
          Many people are discovering the benefits of veneers. Veneers are thin
          coverings that are placed over the front part of the teeth.
         </p>
-        <button>More Info</button>
+        <button onClick={handleMoreInfo}>More Info</button>
        </div>
        <div className="card-c6">
         <img src={syringe} alt="img-syringe" />
@@ -154,7 +163,7 @@ function LandingPage() {
          Applicants to either of these programs typically need a bachelor's
          degree in biology.
         </p>
-        <button>More Info</button>
+        <button onClick={handleMoreInfo}>More Info</button>
        </div>
       </div>
      </div>
@@ -173,28 +182,28 @@ function LandingPage() {
        <img src={doc1} alt="error" />
        <h5>Dr. Jonathan Barnes</h5>
        <small>Chief Medical Officer</small>
-       <button>More Info</button>
+       <button onClick={handleMoreInfo1}>More Info</button>
       </div>
       <div className="card-doc-2">
        <img src={doc2} alt="error" />
        <h5>Dr. Hannah Harper</h5>
        <small>Anesthesiologist</small>
-       <button>More Info</button>
+       <button onClick={handleMoreInfo1}>More Info</button>
       </div>
       <div className="card-doc-3">
        <img src={doc3} alt="error" />
        <h5>Dr. Matthew Anderson</h5>
        <small>Cardiology Specialist</small>
-       <button>More Info</button>
+       <button onClick={handleMoreInfo1}>More Info</button>
       </div>
       <div className="card-doc-4">
        <img src={doc4} alt="error" />
        <h5>Dr. Megan Coleman</h5>
        <small>Neurosurgeon Specialist</small>
-       <button>More Info</button>
+       <button onClick={handleMoreInfo1}>More Info</button>
       </div>
      </div>
-     <button>All Doctors Profile</button>
+     <button >All Doctors Profile</button>
     </div>
     <div className="div-6-landing-page">
      <img src={hosplogoly} alt="" />
@@ -205,7 +214,7 @@ function LandingPage() {
        health. We have put protocols to protect our patients and staff while
        continuing to provide medically necessary care.
       </p>
-      <button>Make An Appointment</button>
+      <button onClick={handleMakeAnAppointment}>Make An Appointment</button>
      </div>
     </div>
     <div className="div-7-landing-page">

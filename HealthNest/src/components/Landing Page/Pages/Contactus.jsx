@@ -5,18 +5,10 @@ import logoicon from "../../../assets/MedicalLogo Icon.svg";
 function Contactus() {
  const navigate = useNavigate();
  function handleLoginButton() {
-  if (isLoggedIn()) {
-   navigate("/authenticated/user/dashboard");
-  } else {
-   navigate("/authentication/login");
-  }
+  navigate("/authenticated/user/dashboard");
  }
  function handleSignUpButton() {
-  if (isLoggedIn()) {
-   navigate("/authenticated/user/dashboard");
-  } else {
-   navigate("/authentication/signup");
-  }
+  navigate("/authenticated/user/dashboard");
  }
  return (
   <>
